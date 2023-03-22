@@ -26,8 +26,10 @@
 .margin-0-auto{margin: 0 auto;}
 .margin-auto{margin: auto;}
 .margin-top1{margin-top: 1rem;}
-
+/* text align */
 .text-align-center{text-align: center;}
+.text-align-end{text-align: end;}
+
 
 /* padding */
 
@@ -79,6 +81,10 @@
     z-index: 10;
 }
 
+.left-main i{
+    font-size: large;
+}
+
 .download{
     border-bottom: 2px solid rgba(255, 255, 255, 0.511);
     margin:0 1rem;
@@ -101,7 +107,7 @@
 .container{
     height:100px
 }
-
+/* media left side xxs */
 @media screen and (max-width:300px){
 
     .left-main{
@@ -138,9 +144,7 @@
         margin:0 auto;
     }
 }
-.left-main i{
-    font-size: large;
-}
+
 
 
 /* main destra grande */
@@ -152,12 +156,24 @@
 }
 /* finto header inserito nel main  */
 .header{
-    height: 100px;
     position: sticky;
     top: 0;
     width: 100%;
     background-color:brown
 }
+.header button{
+    padding: .7rem 1.5rem;
+    border-radius: 30px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 1.1rem;
+}
+
+
+
+
+
 /* main con contenuto  */
 .main-center{
     height: 100%;
