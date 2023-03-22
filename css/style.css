@@ -102,6 +102,47 @@
     height:100px
 }
 
+@media screen and (max-width:300px){
+
+    .left-main{
+        width: 30px;
+    }
+
+    .left-main span,h5{
+        display:none;
+    }
+    .action-left-playlist li{
+        display:none;
+    }
+
+    .left-sticky-bottom{
+        padding-top: calc(100vh - 100px);
+        transform: translateY(-80px);
+    }
+
+    .logo-small{
+        display:block;
+
+    }
+
+    .logo{
+        display: none;
+    }
+    .download{
+        margin:0 auto;
+        border: 0;
+    }
+
+    .img-user-rounded{
+        width:60%;
+        margin:0 auto;
+    }
+}
+.left-main i{
+    font-size: large;
+}
+
+
 /* main destra grande */
 .right-main{
     width:100%;
