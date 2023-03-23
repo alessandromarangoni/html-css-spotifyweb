@@ -37,6 +37,7 @@
 /* position */
 .relative{position:relative}
 
+
 /* padding */
 
 .padding-025{padding: 0.25rem;}
@@ -166,11 +167,12 @@
 /* finto header inserito nel main  */
 .header{
     text-align: end;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     position: fixed;
     top: 0;
     width:calc(100% - 214px);
-    background-color:#080b12;
+    background-color:#080b1292;
+    z-index: 999;
 }
 .header button{
     margin-right:5rem;
@@ -265,6 +267,25 @@
     border-radius:20px ;
     background-color: rgb(6, 243, 14);
 }
+.media-position{
+    width: 100%;
+    height:100%;
+}
+
+.absolute-circle{
+    position: absolute;
+    padding-top: 6px;
+    font-size:26px;
+    transform: translate(-50%, -50%);
+    top: 0;
+    opacity: 0;
+    left:100%;
+}
+
+.player:hover .absolute-circle{
+    opacity: 1;
+    color: rgb(0, 254, 13);
+}
 
 .vol-bar{
     height: 5px;
@@ -279,8 +300,22 @@
     border-radius:20px ;
     background-color: rgb(91, 91, 91);
 }
-.media-position{
-    
+.vol-position{
+    width: 100%;
+    height: 100%;
+}
+.absolute-circle-2{
+    position: absolute;
+    padding-top: 6px;
+    font-size:20px;
+    transform: translate(-50%, -50%);
+    top: 0;
+    opacity: 0;
+    left:100%;
+}
+.vol-position:hover .absolute-circle-2{
+    color: rgb(255, 255, 255);
+    opacity: 1;
 }
 /* desktop */
 @media screen and (min-width:1160px){
