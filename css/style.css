@@ -5,9 +5,6 @@
     box-sizing: border-box;
 }
 
-body{
-    overflow: hidden;
-}
 /* generic */
 /* flex */
 .flex{display: flex;}
@@ -77,9 +74,11 @@ body{
 .left-main{
     width: 250px;
     background-color:black;
-    height: 100vh;
+    height: calc(100vh - 100px);
     font-size: 12px;
+    justify-content: space-between;
 }
+
 .left-main span,a,li{
     color: #a3a3a3;
     font-weight: 600;
@@ -119,60 +118,19 @@ body{
 }
 
 .left-sticky-bottom{
-    position: sticky;
-    top:calc(100vh - 200px);
     width: 100%;
 }
 
 .container{
-    height:100%;
+    width:100%;
+    height: calc(100vh - 100px);
 }
-/* media left side xxs */
-@media screen and (max-width:400px){
-
-    .left-main{
-        width: 30px;
-    }
-
-    .left-main span,h5{
-        display:none;
-    }
-    .action-left-playlist li{
-        display:none;
-    }
-
-    .left-sticky-bottom{
-        padding-top: calc(100vh - 100px);
-        transform: translateY(-80px);
-    }
-
-    .logo-small{
-        display:block;
-
-    }
-
-    .logo{
-        display: none;
-    }
-    .download{
-        margin:0 auto;
-        border: 0;
-    }
-
-    .img-user-rounded{
-        width:60%;
-        margin:0 auto;
-    }
-}
-
-
 
 /* main destra grande */
-.right-main{
-    width:100%;
-    background-color: pink;
-    height: 100vh;
-    flex-direction: column;
+.right-main{    
+    overflow-y: scroll;
+    width: calc(100% - 250px);
+    background-color: #141922;
 }
 
 .right-main span{
@@ -188,14 +146,18 @@ body{
     font-weight: 500;
     font-weight:600 ;
 }
+
 /* finto header inserito nel main  */
 .header{
-    position: sticky;
+    text-align: end;
+    padding: 2rem 0;
+    position: fixed;
     top: 0;
-    width: 100%;
-    background-color:#080b12
+    width:calc(100% - 214px);
+    background-color:#080b12;
 }
 .header button{
+    margin-right:5rem;
     padding: .5rem 1rem;
     border-radius: 30px;
     border: 2px solid white;
@@ -203,16 +165,12 @@ body{
     color: white;
 }
 
-
-
-
-
 /* main con contenuto  */
 .main-center{
-    height: calc(100vh - 150px);
+    height: calc(100vh - 100px);
     background-color: #141922;
-    overflow-y: scroll;
     width:100%;
+    padding-top: 100px;
 }
 
 .album{
@@ -220,38 +178,14 @@ body{
     padding: .5rem;
 }
 
-@media screen and (min-width:768px){
-    .azioni-center{
-        padding: 1rem;
-        width: 80%;
-    }
-
-    .album{
-        width: calc(100% / 4);
-    }
-}
-
-@media screen and (min-width:1160px){
-    .azioni-center{
-        padding: 1rem;
-        width: 50%;
-    }
-
-    .album{
-        width: calc(100% / 6);
-    }
-}
-
-
-
 /* media footer */
 .media-row{
-    align-self: flex-end;
     width: 100%;
     background-color: #282828;
     position:fixed;
     bottom:0;
     z-index: 999;
+    height: 100px;
 }
 
 .media-row i,h5{
@@ -267,24 +201,11 @@ body{
 }
 
 .footer-section img{
-    width: 25%;
+    width: 15%; 
 }
 
 .footer-play-i{
     font-size: 1.2rem;
-}
-
-@media screen and (max-width:550px){
-    .footer-play-i .fa-solid:nth-child(1){
-        display: none;
-    }
-    .footer-play-i .fa-solid:nth-child(5){
-        display: none;
-    }
-
-    .footer-play-i{
-        font-size: small;
-    }
 }
 
 .bar-behind{
@@ -301,10 +222,6 @@ body{
     border-radius:20px ;
     background-color: rgb(6, 243, 14);
 }
-/* media desktop fare questo 
-.footer-section:last-child{
-    width: 20%;
-} */
 
 .vol-bar{
     height: 5px;
@@ -320,8 +237,90 @@ body{
     background-color: rgb(91, 91, 91);
 }
 
-@media screen and (min-screen:1160px) {
+/* desktop */
+@media screen and (min-width:1160px){
+    .azioni-center{
+        padding: 1rem;
+        width: 50%;
+    }
+
+    .album{
+        width: calc(100% / 6);
+    }
+
     .footer-section:last-of-type{
-        width: 200px !important;
+        width: 200px;
+    }
+}
+
+/*  */
+
+@media screen and (min-width:768px) and (max-width:1160px){
+    .azioni-center{
+        padding: 1rem;
+        width: 80%;
+    }
+
+    .album{
+        width: calc(100% / 4);
+    }
+
+    .footer-section:last-child{
+        width: calc(100% / 3);
+    }
+}
+
+/* s */
+
+@media screen and (max-width:550px){
+    .footer-play-i .fa-solid:nth-child(1){
+        display: none;
+    }
+    .footer-play-i .fa-solid:nth-child(5){
+        display: none;
+    }
+
+    .footer-play-i{
+        font-size: small;
+    }
+}
+
+/* media left side xxs */
+@media screen and (max-width:400px){
+
+    .left-main{
+        width: 30px;
+    }
+    .header{
+        width:calc(100% - 30px);
+    }
+    #add-playlist{
+        font-size: medium;
+    }
+    .right-main{
+        width: 100%;
+    }
+    .left-main span,h5{
+        display:none;
+    }
+    .action-left-playlist li{
+        display:none;
+    }
+
+    .logo-small{
+        display:block;
+    }
+
+    .logo{
+        display: none;
+    }
+    .download{
+        margin:0 auto;
+        border: 0;
+    }
+
+    .img-user-rounded{
+        width:60%;
+        margin:0 auto;
     }
 }
