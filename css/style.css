@@ -13,7 +13,7 @@
 .justify-center{justify-content: center;}
 .justify-space-bt{justify-content: space-between;}
 .justify-space-around{justify-content: space-around;}
-.justfy-end{justify-content: end;}
+.justfy-end{justify-content: flex-end;}
 .align-item-center{align-items: center;}
 .align-item-start{align-items: start;}
 .align-item-end{align-items: flex-end;}
@@ -33,6 +33,9 @@
 .text-align-end{text-align: end;}
 
 .rounded{border-radius: 50%;}
+
+/* position */
+.relative{position:relative}
 
 /* padding */
 
@@ -86,6 +89,14 @@
     list-style: none;
 }
 
+.left-main span,li:hover{
+    color: white;
+}
+
+.action-left-icon li:hover{
+    border-left: 3px solid greenyellow;
+}
+
 .action-left-playlist h5{
     font-size: 1.1rem;
 }
@@ -136,6 +147,11 @@
 .right-main span{
     color: #a3a3a3;
 }
+.right-main a:hover{
+    border-top: 3px solid greenyellow;
+    color: white;
+}
+
 .right-main h3,h4{
     color: white;
 }
@@ -165,6 +181,14 @@
     color: white;
 }
 
+.header button:hover{
+    transform: scale(1.1);
+}
+
+.header button:active{
+    transform: scale(1);
+}
+
 /* main con contenuto  */
 .main-center{
     height: calc(100vh - 100px);
@@ -176,6 +200,21 @@
 .album{
     width: 50%;
     padding: .5rem;
+}
+.absolute-h{
+    font-size: 100px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    color: rgba(245, 245, 220, 0);
+    transform: translate(-50%, 50%);
+    z-index: 999;
+}
+.album:hover .absolute-h{
+    color: rgb(245, 245, 220);
+}
+.album:hover .relative img{
+    filter: brightness(0.4);
 }
 
 /* media footer */
@@ -208,6 +247,10 @@
     font-size: 1.2rem;
 }
 
+.media-row .footer-section:last-child{
+    justify-content: end;
+}
+
 .bar-behind{
     margin-top: 1rem;
     width: 20vw;
@@ -236,7 +279,9 @@
     border-radius:20px ;
     background-color: rgb(91, 91, 91);
 }
-
+.media-position{
+    
+}
 /* desktop */
 @media screen and (min-width:1160px){
     .azioni-center{
@@ -248,9 +293,6 @@
         width: calc(100% / 6);
     }
 
-    .footer-section:last-of-type{
-        width: 200px;
-    }
 }
 
 /*  */
