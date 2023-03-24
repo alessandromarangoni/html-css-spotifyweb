@@ -118,6 +118,10 @@ body{
     color: #a3a3a3;
 }
 
+.left-sticky-bottom{
+    width: 100%;
+}
+
 .download{
     border-bottom: 2px solid rgba(255, 255, 255, 0.511);
     margin:0 1rem;
@@ -132,10 +136,6 @@ body{
     background-color: grey;
     border-radius: 50%;
     margin: 0.5rem 1rem ;
-}
-
-.left-sticky-bottom{
-    width: 100%;
 }
 
 .container{
@@ -153,9 +153,16 @@ body{
 .right-main span{
     color: #a3a3a3;
 }
-.right-main a:hover{
-    border-top: 3px solid greenyellow;
-    color: white;
+
+.right-main a:active + .bottom-green{
+    background-color: greenyellow;
+}
+.bottom-green{
+    margin:0 auto;
+    height:2px;
+    width: 50%;
+    border-radius: 30px;
+    margin-bottom: .5rem;
 }
 
 .right-main h3,h4{
@@ -164,9 +171,13 @@ body{
 
 .azioni-center a{
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
     font-weight:600 ;
+}
+
+.azioni-center a:hover{
+    color: white;
 }
 
 /* finto header inserito nel main  */
@@ -209,13 +220,14 @@ body{
     padding: .5rem;
 }
 .absolute-h{
-    font-size: 100px;
+    font-size: 70px;
     position: absolute;
     bottom: 50%;
     left: 50%;
     color: rgba(245, 245, 220, 0);
     transform: translate(-50%, 50%);
     z-index: 1;
+    transition: .05s;
 }
 .album:hover .absolute-h{
     color: rgb(245, 245, 220);
@@ -223,12 +235,14 @@ body{
 .album:hover .relative img{
     filter: brightness(0.4);
 }
+.album:active .absolute-h{
+    font-size: 90px;
+}
 
 /* media footer */
 .media-row{
     width: 100%;
     background-color: #282828;
-    position:fixed;
     bottom:0;
     z-index: 999;
     height: 100px;
@@ -241,9 +255,16 @@ body{
 .media-row span{
     color: #a3a3a3;
 }
+#song-option-footer i:hover{
+    color: greenyellow;
+    transform: scale(1.05);
+}
 
 .footer-section{
     width: calc(100% / 3);
+}
+.footer-section span:hover{
+    text-decoration: underline;
 }
 
 .footer-section img{
@@ -270,7 +291,7 @@ body{
     width: 60%;
     height: 5px;
     border-radius:20px ;
-    background-color: rgb(6, 243, 14);
+    background-color: rgb(128, 128, 128);
 }
 .media-position{
     width: 100%;
@@ -291,7 +312,9 @@ body{
     opacity: 1;
     color: rgb(0, 254, 13);
 }
-
+.player:hover .bar-green{
+    background-color: rgb(0, 254, 13);
+}
 .vol-bar{
     height: 5px;
     background-color: beige;
@@ -333,6 +356,12 @@ body{
         width: calc(100% / 6);
     }
 
+    .footer-section div br{
+        display: none;
+    }
+    .footer-section:first-child div i{
+        padding:0 .5rem ;
+    }
 }
 
 /*  */
@@ -402,7 +431,8 @@ body{
     }
 
     .img-user-rounded{
-        width:60%;
+        width:20px;
+        height: 20px;
         margin:0 auto;
     }
 }
